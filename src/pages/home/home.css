@@ -1,0 +1,66 @@
+.homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: .5rem;
+    width: 500px;
+    background: #FCFCFC;
+    border: solid 1px #AFC84A;
+    padding: 25px 35px;
+    box-shadow: 1px 1px 94px -10px rgba(201,222,132,0.75);
+}
+
+form {
+    width: 90%;
+}
+
+label {
+    display: block;
+    margin-top: .5rem;
+    color: #93AD18;
+}
+
+.address {
+    margin-top: 20px;
+    background-color: #E5F1B8;
+    border: solid 1px #AFC84A;
+    border-radius: .5rem;
+    padding: 25px 35px;
+    box-shadow: 1px 1px 94px -10px rgba(201,222,132,0.75);
+}
+
+legend {
+    font-size: 1.3rem;
+    color: #93AD18;
+}
+
+h1 {
+    color: #93AD18;
+}
+
+input {
+    all: unset;
+    border-bottom: solid 1px #AFC84A;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4px;
+    margin-bottom: 10px;
+    color: #5A6F07;
+}
+
+.form-btn {
+    margin-top: 2rem;
+    background-color: #93AD18;
+    color: #FFF;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+}
