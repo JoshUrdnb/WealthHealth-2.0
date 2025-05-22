@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 85vh;
 }
 
 .container {
@@ -12,13 +12,16 @@
     justify-content: center;
     border-radius: .5rem;
     width: 500px;
-    background: #FCFCFC;
+    background: #F9F6EE;
     border: solid 1px #AFC84A;
     padding: 25px 35px;
     box-shadow: 1px 1px 94px -10px rgba(201,222,132,0.75);
 }
 
 form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 90%;
 }
 
@@ -28,7 +31,19 @@ label {
     color: #93AD18;
 }
 
+select {
+    all: unset;
+    border-bottom: solid 1px #AFC84A;
+    width: 100%;
+    box-sizing: border-box;
+    padding: .5rem;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #5A6F07;
+}
+
 .address {
+    width: 100%;
     margin-top: 20px;
     background-color: #E5F1B8;
     border: solid 1px #AFC84A;
@@ -43,7 +58,7 @@ legend {
 }
 
 h1 {
-    color: #93AD18;
+    color: #5A6F07;
 }
 
 input {
@@ -57,9 +72,10 @@ input {
 }
 
 .form-btn {
+    width: 100px;
     margin-top: 2rem;
     background-color: #93AD18;
-    color: #FFF;
+    color: #F9F6EE;
     border: none;
     padding: 10px 25px;
     border-radius: 5px;

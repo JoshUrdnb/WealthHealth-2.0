@@ -1,5 +1,6 @@
-import { useState } from "react"
 import './home.css'
+import { useState } from "react"
+import Modal from "../../components/modal/Modal.jsx"
 
 export default function Home() {
     const [firstName, setFirstName] = useState("")
@@ -10,7 +11,9 @@ export default function Home() {
     const [city, setCity] = useState("")
     const [state, setState] = useState("")
     const [zipCode, setZipCode] = useState("")
-    const [department, setDepartment] = useState("Sales")
+    const [department, setDepartment] = useState("")
+
+    const [isModalOpen, setIsModalOpen] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -28,13 +31,15 @@ export default function Home() {
         }
 
         console.log("New Employee:", newEmployee)
+
+        setIsModalOpen(true)
     }
 
     return (
         <div className="homepage">
             <div className="container">
                 <h1>Create Employee</h1>
-                <form id="create-employee" onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
                     <label htmlFor="first-name">First Name</label>
                     <input
                         type="text"
@@ -86,15 +91,17 @@ export default function Home() {
                             onChange={(e) => setCity(e.target.value)}
                         />
 
-                        <label htmlFor="state">State</label>
+                        <label htmlFor="state">State ⤵</label>
                         <select
                             id="state"
                             value={state}
                             onChange={(e) => setState(e.target.value)}
                         >
-                            <option value="">Select a state</option>
-                            <option value="CA">California</option>
-                            <option value="NY">Florida</option>
+                            <option value="">Select your state</option>
+                            <option value="CA">Arizona</option>
+                            <option value="TX">California</option>
+                            <option value="FL">Florida</option>
+                            <option value="TX">Texas</option>
                         </select>
 
                         <label htmlFor="zip-code">Zip Code</label>
@@ -106,21 +113,27 @@ export default function Home() {
                         />
                     </fieldset>
 
-                    <label htmlFor="department">Department</label>
+                    <label htmlFor="department">Department ⤵</label>
                     <select
                         id="department"
                         value={department}
                         onChange={(e) => setDepartment(e.target.value)}
                     >
-                        <option>Sales</option>
-                        <option>Marketing</option>
-                        <option>Engineering</option>
-                        <option>Human Resources</option>
-                        <option>Legal</option>
+                        <option value="">Select your department</option>
+                        <option value="Sales">Sales</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Human Resources">Human Resources</option>
+                        <option value="Legal">Legal</option>
                     </select>
 
                     <button type="submit" className="form-btn">Save</button>
                 </form>
+
+                <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+                    <p>Employee created successfully!</p>
+                </Modal>
+
             </div>
         </div>
     )
