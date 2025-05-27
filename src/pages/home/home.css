@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 85vh;
+    min-height: 82vh;
 }
 
 .container {
@@ -25,13 +25,13 @@ form {
     width: 90%;
 }
 
-label {
+.container label {
     display: block;
     margin-top: .5rem;
     color: #93AD18;
 }
 
-select {
+.container select {
     all: unset;
     border-bottom: solid 1px #AFC84A;
     width: 100%;
@@ -61,7 +61,7 @@ h1 {
     color: #5A6F07;
 }
 
-input {
+.container input {
     all: unset;
     border-bottom: solid 1px #AFC84A;
     width: 100%;

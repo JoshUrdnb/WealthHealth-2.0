@@ -1,0 +1,132 @@
+table {
+    max-width: 1200px;
+    width: 100%;
+    border: solid 1px #5A6F07;
+    box-shadow: 1px 1px 94px -10px rgba(201,222,132,0.75);
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #AFC84A;
+    color: #F9F6EE;
+    font-weight: bold;
+    border: solid 1px #AFC84A;
+}
+
+tr, th, td {
+    text-align: left;
+    border: none;
+}
+
+tbody {
+    color: #AFC84A;
+    background-color: #F9F6EE;
+    border: solid 1px #AFC84A;
+}
+
+td, th {
+    padding: 10px;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+tr:hover td {
+    background-color: #AFC84A;
+    color: #F9F6EE;
+    cursor: pointer;
+}
+
+.table-sort-icon {
+    margin-left: .5rem;
+    font-size: 12px;
+    opacity: 0.7;
+}
+.table-sort-icon.active {
+    opacity: 1;
+    color: #5A6F07;
+}
+
+.showing {
+    color: #5A6F07;
+    font-size: 1.2rem;
+}
+
+.pagination-index {
+    color: #5A6F07;
+    font-size: 1.2rem;
+}
+
+.pagination-btn {
+    width: 100px;
+    margin-bottom: 2rem;
+    background-color: #93AD18;
+    color: #F9F6EE;
+    border: none;
+    border-radius: 5px;
+}
+
+.header-form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.page-size-selector {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #AFC84A;
+    border-radius: .5rem;
+    background-color: #F9F6EE;
+}
+
+.page-size-selector select {
+    all: unset;
+    border-bottom: solid 1px #AFC84A;
+    box-sizing: border-box;
+    padding: .5rem;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #5A6F07;
+}
+
+.page-size-selector label {
+    color: #5A6F07;
+}
+
+.show-entries {
+    margin-right: 1rem;
+}
+
+.search-input {
+    border: solid 1px #AFC84A;
+    border-radius: .5rem;
+    width: 250px;
+    background-color: #F9F6EE;
+}
+
+input {
+    all: unset;
+    border-bottom: solid 1px #AFC84A;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4px;
+    color: #5A6F07;
+}
+
+.footer-form {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .table-wrapper {
+    height: 400px;
+    overflow-y: auto;
+} */
