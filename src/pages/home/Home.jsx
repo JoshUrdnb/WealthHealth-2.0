@@ -1,6 +1,7 @@
 import './home.css'
 import { useState } from "react"
 import Modal from "../../components/modal/Modal.jsx"
+import { useEmployee } from '../../context/UseEmployee.jsx'
 
 export default function Home() {
     const [firstName, setFirstName] = useState("")
@@ -14,6 +15,7 @@ export default function Home() {
     const [department, setDepartment] = useState("")
 
     const [isModalOpen, setIsModalOpen] = useState(false)
+    const { addEmployee } = useEmployee()
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -29,6 +31,7 @@ export default function Home() {
             zipCode,
             department
         }
+        addEmployee(newEmployee)
 
         console.log("New Employee:", newEmployee)
 
