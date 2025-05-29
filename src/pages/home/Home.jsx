@@ -2,6 +2,8 @@ import './home.css'
 import { useState } from "react"
 import Modal from "../../components/modal/Modal.jsx"
 import { useEmployee } from '../../context/UseEmployee.jsx'
+import InputField from "../../components/inputField/InputField.jsx"
+import SelectField from "../../components/selectField/SelectField.jsx"
 
 export default function Home() {
     const [firstName, setFirstName] = useState("")
@@ -31,10 +33,9 @@ export default function Home() {
             zipCode,
             department
         }
+
         addEmployee(newEmployee)
-
-        console.log("New Employee:", newEmployee)
-
+        // console.log("New Employee:", newEmployee)
         setIsModalOpen(true)
     }
 
@@ -43,34 +44,30 @@ export default function Home() {
             <div className="container">
                 <h1>Create Employee</h1>
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor="first-name">First Name</label>
-                    <input
-                        type="text"
+                    <InputField
+                        label="First Name"
                         id="first-name"
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
                     />
 
-                    <label htmlFor="last-name">Last Name</label>
-                    <input
-                        type="text"
+                    <InputField
+                        label="Last Name"
                         id="last-name"
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
                     />
 
-                    <label htmlFor="date-of-birth">Date of Birth</label>
-                    <input
+                    <InputField
+                        label="Date of Birth"
                         id="date-of-birth"
-                        type="text"
                         value={dateOfBirth}
                         onChange={(e) => setDateOfBirth(e.target.value)}
                     />
 
-                    <label htmlFor="start-date">Start Date</label>
-                    <input
+                    <InputField
+                        label="Start Date"
                         id="start-date"
-                        type="text"
                         value={startDate}
                         onChange={(e) => setStartDate(e.target.value)}
                     />
@@ -78,37 +75,35 @@ export default function Home() {
                     <fieldset className="address">
                         <legend>Address</legend>
 
-                        <label htmlFor="street">Street</label>
-                        <input
+                        <InputField
+                            label="Street"
                             id="street"
-                            type="text"
                             value={street}
                             onChange={(e) => setStreet(e.target.value)}
                         />
 
-                        <label htmlFor="city">City</label>
-                        <input
+                        <InputField
+                            label="City"
                             id="city"
-                            type="text"
                             value={city}
                             onChange={(e) => setCity(e.target.value)}
                         />
 
-                        <label htmlFor="state">State ⤵</label>
-                        <select
+                        <SelectField
+                            label="State"
                             id="state"
                             value={state}
                             onChange={(e) => setState(e.target.value)}
-                        >
-                            <option value="">Select your state</option>
-                            <option value="CA">Arizona</option>
-                            <option value="TX">California</option>
-                            <option value="FL">Florida</option>
-                            <option value="TX">Texas</option>
-                        </select>
+                            options={[
+                                { label: "Arizona", value: "AZ" },
+                                { label: "California", value: "CA" },
+                                { label: "Florida", value: "FL" },
+                                { label: "Texas", value: "TX" },
+                            ]}
+                        />
 
-                        <label htmlFor="zip-code">Zip Code</label>
-                        <input
+                        <InputField
+                            label="Zip Code"
                             id="zip-code"
                             type="number"
                             value={zipCode}
@@ -116,19 +111,19 @@ export default function Home() {
                         />
                     </fieldset>
 
-                    <label htmlFor="department">Department ⤵</label>
-                    <select
+                    <SelectField
+                        label="Department"
                         id="department"
                         value={department}
                         onChange={(e) => setDepartment(e.target.value)}
-                    >
-                        <option value="">Select your department</option>
-                        <option value="Sales">Sales</option>
-                        <option value="Marketing">Marketing</option>
-                        <option value="Engineering">Engineering</option>
-                        <option value="Human Resources">Human Resources</option>
-                        <option value="Legal">Legal</option>
-                    </select>
+                        options={[
+                            { label: "Sales", value: "Sales" },
+                            { label: "Marketing", value: "Marketing" },
+                            { label: "Engineering", value: "Engineering" },
+                            { label: "Human Resources", value: "Human Resources" },
+                            { label: "Legal", value: "Legal" },
+                        ]}
+                    />
 
                     <button type="submit" className="form-btn">Save</button>
                 </form>
@@ -136,7 +131,6 @@ export default function Home() {
                 <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
                     <p>Employee created successfully!</p>
                 </Modal>
-
             </div>
         </div>
     )
