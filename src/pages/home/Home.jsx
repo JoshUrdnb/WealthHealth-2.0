@@ -1,11 +1,11 @@
 import './home.css'
 import { useState } from "react"
-// import Modal from "../../components/modal/Modal.jsx"
 import { useEmployee } from '../../context/UseEmployee.jsx'
 import InputField from "../../components/inputField/InputField.jsx"
 import SelectField from "../../components/selectField/SelectField.jsx"
-// import HelloWorld from "react-modal-plugin-oc"
-import ModalPlugin from "react-modal-plugin-oc"
+// import Modal from "../../components/modal/Modal.jsx"
+import Modal from "react-modal-plugin-oc"
+import "react-modal-plugin-oc/modalPlugin.css"
 
 export default function Home() {
     const [firstName, setFirstName] = useState("")
@@ -44,7 +44,6 @@ export default function Home() {
     return (
         <div className="homepage">
             <div className="container">
-            {/* <HelloWorld /> */}
                 <h1>Create Employee</h1>
                 <form onSubmit={handleSubmit}>
                     <InputField
@@ -131,9 +130,9 @@ export default function Home() {
                     <button type="submit" className="form-btn">Save</button>
                 </form>
 
-                <ModalPlugin isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+                <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
                     <p>Employee created successfully!</p>
-                </ModalPlugin>
+                </Modal>
             </div>
         </div>
     )
