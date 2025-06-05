@@ -13,7 +13,7 @@
     "@tanstack/react-table": "^8.21.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-modal-plugin-oc": "^2.0.4",
+    "react-modal-plugin-oc": "^2.0.5",
     "react-router-dom": "^7.6.0"
   },
   "devDependencies": {
