@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 82vh;
+    min-height: 80vh;
 }
 
 .container {
@@ -12,10 +12,9 @@
     justify-content: center;
     border-radius: .5rem;
     width: 500px;
-    background: #F9F6EE;
-    border: solid 1px #AFC84A;
+    background: #FFF;
+    border: solid 1px #5A6F07;
     padding: 25px 35px;
-    box-shadow: 1px 1px 94px -10px rgba(201,222,132,0.75);
 }
 
 form {
@@ -28,15 +27,16 @@ form {
 .container label {
     display: block;
     margin-top: .5rem;
-    color: #93AD18;
+    color: #5A6F07;
+    font-size: 1.2rem;
 }
 
 .container select {
     all: unset;
-    border-bottom: solid 1px #AFC84A;
+    border-bottom: solid 1px #5A6F07;
     width: 100%;
     box-sizing: border-box;
-    padding: .5rem;
+    padding: .3rem;
     margin-top: 5px;
     margin-bottom: 10px;
     color: #5A6F07;
@@ -45,38 +45,42 @@ form {
 .address {
     width: 100%;
     margin-top: 20px;
-    background-color: #E5F1B8;
-    border: solid 1px #AFC84A;
+    background-color: #F5F5F5;
+    border: solid 1px #5A6F07;
     border-radius: .5rem;
     padding: 25px 35px;
-    box-shadow: 1px 1px 94px -10px rgba(201,222,132,0.75);
 }
 
 legend {
     font-size: 1.3rem;
-    color: #93AD18;
+    color: #5A6F07;
 }
 
 h1 {
-    color: #5A6F07;
+    color: #205522;
 }
 
 .container input {
     all: unset;
-    border-bottom: solid 1px #AFC84A;
+    border-bottom: solid 1px #5A6F07;
     width: 100%;
     box-sizing: border-box;
-    padding: 4px;
+    padding: 2px;
     margin-bottom: 10px;
-    color: #5A6F07;
+    color: #205522;
+    font-size: 1.1rem;
 }
 
 .form-btn {
     width: 100px;
     margin-top: 2rem;
-    background-color: #93AD18;
-    color: #F9F6EE;
+    background-color: #5A6F07;
+    color: #FFF;
     border: none;
     padding: 10px 25px;
     border-radius: 5px;
+}
+
+.form-btn:hover {
+    background-color: #93AD18;
 }

@@ -1,6 +1,6 @@
 import './header.css'
 import { Link, useLocation } from 'react-router-dom'
-import Logo from '../../assets/WealthHealth-logo.png'
+import Logo from '../../assets/WealthHealth-logo.webp'
 
 function Navbar() {
 

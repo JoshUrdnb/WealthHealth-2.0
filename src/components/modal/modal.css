@@ -5,7 +5,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(3, 3, 3, 0.7);
+    background-color: rgba(3, 3, 3, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,25 +17,23 @@
     border-radius: .5rem;
     max-width: 450px;
     width: 100%;
-    box-shadow: 1px 1px 94px -10px rgba(201,222,132,0.75);
-    border: solid 2px #AFC84A;
-    background: #F9F6EE;
+    border: solid 3px #5A6F07;
+    background: #FFF;
 }
 
 .close-button {
     position: absolute;
-    right: -20px;
-    top: -12px;
-    font-size: 1.5rem;
+    right: -42px;
+    top: -28px;
+    font-size: 2.5rem;
     background: none;
     border: none;
     cursor: pointer;
-    color: lightcoral;
+    color: #205522;
 }
 
 .modal-body {
-    /* margin-top: 1rem; */
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #5A6F07;
 }

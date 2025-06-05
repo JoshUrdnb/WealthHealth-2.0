@@ -1,12 +1,12 @@
 .footer {
     display: flex;
     justify-content: center;
-    border-top: 1px solid #AFC84A;
+    border-top: 1px solid #5A6F07;
     padding: 2rem 0 1.5rem;
 }
 
 .footer-text {
     margin: 0;
     padding: 0;
-    color: #93AD18;
+    color: #5A6F07;
 }

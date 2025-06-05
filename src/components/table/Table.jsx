@@ -36,12 +36,13 @@ const Table = ({ data, columns }) => {
             <div className='header-form'>
                 {/* Ajout du sélecteur de nombre de lignes à afficher par page */}
                 <div className="page-size-selector">
-                    <label className='show-entries'>Show entries:</label>
+                    <label className='show-entries' htmlFor="page-size-select">Show entries:</label>
                     <select
+                        id="page-size-select"
                         value={table.getState().pagination.pageSize}
                         onChange={e => table.setPageSize(Number(e.target.value))}
                     >
-                        {[10, 25, 50, 100].map(pageSize => (
+                        {[5, 10, 25, 50, 100].map(pageSize => (
                             <option key={pageSize} value={pageSize}>
                                 {pageSize}
                             </option>
