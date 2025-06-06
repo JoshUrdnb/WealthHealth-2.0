@@ -7,6 +7,14 @@ import SelectField from "../../components/selectField/SelectField.jsx"
 import Modal from "react-modal-plugin-oc"
 import "react-modal-plugin-oc/modalPlugin.css"
 
+const listDepts = [
+    { label: "Sales", value: "Sales" },
+    { label: "Marketing", value: "Marketing" },
+    { label: "Engineering", value: "Engineering" },
+    { label: "Human Resources", value: "Human Resources" },
+    { label: "Legal", value: "Legal" }
+]
+
 export default function Home() {
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
@@ -118,13 +126,7 @@ export default function Home() {
                         id="department"
                         value={department}
                         onChange={(e) => setDepartment(e.target.value)}
-                        options={[
-                            { label: "Sales", value: "Sales" },
-                            { label: "Marketing", value: "Marketing" },
-                            { label: "Engineering", value: "Engineering" },
-                            { label: "Human Resources", value: "Human Resources" },
-                            { label: "Legal", value: "Legal" },
-                        ]}
+                        options={listDepts}
                     />
 
                     <button type="submit" className="form-btn">Save</button>
