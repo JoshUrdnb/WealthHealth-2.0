@@ -84,3 +84,10 @@ h1 {
 .form-btn:hover {
     background-color: #93AD18;
 }
+
+input.error,
+select.error {
+    background-color: #ffe5e5;
+    border-bottom: solid 1px lightcoral;
+    border-radius: .3rem;
+}

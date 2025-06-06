@@ -1,4 +1,4 @@
-export default function InputField({ label, id, type = "text", value, onChange }) {
+export default function InputField({ label, id, type = "text", value, onChange, className = "", placeholder={placeholder} }) {
     return (
         <>
             <label htmlFor={id}>{label}</label>
@@ -7,6 +7,8 @@ export default function InputField({ label, id, type = "text", value, onChange }
                 type={type}
                 value={value}
                 onChange={onChange}
+                className={className}
+                placeholder={placeholder}
             />
         </>
     )
