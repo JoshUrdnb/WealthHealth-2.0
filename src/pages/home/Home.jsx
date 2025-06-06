@@ -3,6 +3,7 @@ import { useState } from "react"
 import { useEmployee } from '../../context/UseEmployee.jsx'
 import InputField from "../../components/inputField/InputField.jsx"
 import SelectField from "../../components/selectField/SelectField.jsx"
+import stateOptions from "../../data/usStates.json"
 // import Modal from "../../components/modal/Modal.jsx"
 import Modal from "react-modal-plugin-oc"
 import "react-modal-plugin-oc/modalPlugin.css"
@@ -104,12 +105,7 @@ export default function Home() {
                             id="state"
                             value={state}
                             onChange={(e) => setState(e.target.value)}
-                            options={[
-                                { label: "Arizona", value: "AZ" },
-                                { label: "California", value: "CA" },
-                                { label: "Florida", value: "FL" },
-                                { label: "Texas", value: "TX" },
-                            ]}
+                            options={stateOptions}
                         />
 
                         <InputField
