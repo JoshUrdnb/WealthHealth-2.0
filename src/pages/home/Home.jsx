@@ -109,7 +109,7 @@ export default function Home() {
                         value={dateOfBirth}
                         selected={dateOfBirth}
                         onChange={setDateOfBirth}
-                        placeholder="Select Your Date of Birth"
+                        placeholder="Pick the date of birth"
                         className={showErrors && !dateOfBirth ? "error" : ""}
                     />
 
@@ -119,7 +119,7 @@ export default function Home() {
                         value={startDate}
                         selected={startDate}
                         onChange={setStartDate}
-                        placeholder="Select Your Starting Date"
+                        placeholder="Pick the starting date"
                         className={showErrors && !startDate ? "error" : ""}
                     />
 
