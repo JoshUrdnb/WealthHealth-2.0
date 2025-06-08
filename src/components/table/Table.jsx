@@ -109,32 +109,42 @@ const Table = ({ data, columns }) => {
                 {/* Affichage des informations de pagination : indique le numéro de la première et dernière ligne affichée, ainsi que le total de lignes filtrées. */}
                 <div className='showing' style={{ marginTop: '8px' }}>
                     <span>
-                        Showing {table.getState().pagination.pageIndex * table.getState().pagination.pageSize + 1}
+                        Showing {table.getRowModel().rows.length > 0 ? table.getState().pagination.pageIndex * table.getState().pagination.pageSize + 1 : 0}
                         {' to '}
                         {Math.min(
                             (table.getState().pagination.pageIndex + 1) * table.getState().pagination.pageSize,
-                            data.length
+                            table.getFilteredRowModel().rows.length
                         )}{' '}
-                        of {data.length} entries
+                        of {table.getFilteredRowModel().rows.length} entries
                     </span>
                 </div>
 
                 {/* Boutons de navigation pour la pagination */}
-                <div style={{ marginTop: '8px' }}>
+                <div className='pagination-controls' style={{ marginTop: '8px' }}>
                     <button className='pagination-btn'
                         onClick={() => table.previousPage()}                    // Aller à la page précédente
-                        disabled={!table.getCanPreviousPage()}                 // Désactiver si déjà en première page
+                        disabled={!table.getCanPreviousPage()}                 // Désactive le bouton s'il n'y a pas de page précédente
                     >
                         Previous
                     </button>
 
-                    <span className='pagination-index' style={{ margin: '0 10px' }}>
-                        {table.getState().pagination.pageIndex + 1}             {/* Numéro de page actuelle */}
-                    </span>
+                    <div className="page-numbers">
+                        {/* Boucle pour créer un bouton pour chaque page */}
+                        {Array.from({ length: table.getPageCount() }, (_, i) => (
+                            <button
+                                key={i}
+                                onClick={() => table.setPageIndex(i)}
+                                // Ajoute la classe 'active' si le bouton correspond à la page actuelle
+                                className={`pagination-page-btn ${table.getState().pagination.pageIndex === i ? 'active' : ''}`}
+                            >
+                                {i + 1}
+                            </button>
+                        ))}
+                    </div>
 
                     <button className='pagination-btn'
-                        onClick={() => table.nextPage()}                        // Aller à la page suivante
-                        disabled={!table.getCanNextPage()}                     // Désactiver si en dernière page
+                        onClick={() => table.nextPage()} // Aller à la page suivante
+                        disabled={!table.getCanNextPage()} // Désactive le bouton s'il n'y a pas de page suivante
                     >
                         Next
                     </button>

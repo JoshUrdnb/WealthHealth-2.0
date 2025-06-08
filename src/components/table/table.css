@@ -49,14 +49,14 @@ tr:hover td {
     font-size: 1.2rem;
 }
 
-.pagination-index {
+/* .pagination-index {
     color: #5A6F07;
     font-size: 1.2rem;
-}
+} */
 
 .pagination-btn {
     width: 100px;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
     background-color: #5A6F07;
     color: #FFF;
     border: none;
@@ -129,3 +129,44 @@ input {
     height: 500px;
     overflow-y: auto;
 } */
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.pagination-page-btn {
+    background-color: #FFF;
+    color: #5A6F07;
+    border: solid 1px #5A6F07;
+    border-radius: 5px;
+    margin: 0 4px;
+    padding: 0.6em 1em;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.pagination-page-btn:hover {
+    background-color: #93AD18;
+    color: #FFF;
+}
+
+.pagination-page-btn.active {
+    background-color: #5A6F07;
+    color: #FFF;
+    border-color: #5A6F07;
+}
+
+.pagination-btn:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.pagination-btn:disabled:hover {
+    background-color: #cccccc;
+}
