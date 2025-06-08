@@ -1,0 +1,102 @@
+.datepicker-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.datepicker-label {
+    color: #4d5c13;
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+/* Calendrier */
+.custom-datepicker-calendar {
+    border: 1.5px solid #b8c98f;
+    border-radius: 12px;
+    background: #f8faee;
+    margin-top: 4px;
+}
+
+/* Header custom : tout sur une ligne, centré */
+.custom-datepicker-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+/* Bouton maison (Today) */
+.custom-datepicker-home {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.2s;
+    padding: 4px 8px;
+    margin-right: 15px;
+}
+.custom-datepicker-home:hover {
+    background: #F6FBE3;
+}
+
+.custom-datepicker-select {
+    cursor: pointer;
+    border-radius: 4px !important;
+    transition: background 0.2s !important;
+    padding: 4px 8px !important;
+}
+.custom-datepicker-select:hover {
+    background: #F6FBE3;
+}
+
+.select-month{
+    width: 80px !important;
+}
+
+/* Flèches navigation */
+.custom-datepicker-arrow {
+    background: none;
+    border: none;
+    color: #5A6F07;
+    font-size: 1.25rem;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 4px 4px;
+    transition: background 0.2s;
+}
+.custom-datepicker-arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+.custom-datepicker-arrow:hover:not(:disabled) {
+    color: #93AD18;
+}
+
+/* Jours */
+.custom-datepicker-calendar .react-datepicker__day {
+    color: #4d5c13;
+    border-radius: 6px; 
+    transition: background 0.2s;
+}
+
+/* Survol */
+.custom-datepicker-calendar .react-datepicker__day:hover {
+    color: #FFF !important;
+    background: #FFB267 !important;
+}
+
+/* Jour aujourd'hui */
+.custom-datepicker-calendar .react-datepicker__day--today {
+    color: #33AAFF;
+    /* border: 1px solid #33AAFF; */
+}
+
+/* Jour sélectionné */
+.custom-datepicker-calendar .react-datepicker__day--selected,
+.custom-datepicker-calendar .react-datepicker__day--keyboard-selected {
+    color: #fff;
+    background: #33AAFF;
+}

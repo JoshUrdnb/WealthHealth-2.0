@@ -4,6 +4,7 @@ import { useEmployee } from '../../context/UseEmployee.jsx'
 import InputField from "../../components/inputField/InputField.jsx"
 import SelectField from "../../components/selectField/SelectField.jsx"
 import stateOptions from "../../data/usStates.json"
+import CustomDatePicker from "../../components/datePicker/DatePicker.jsx"
 // import Modal from "../../components/modal/Modal.jsx"
 import Modal from "react-modal-plugin-oc"
 import "react-modal-plugin-oc/modalPlugin.css"
@@ -19,8 +20,8 @@ const listDepts = [
 export default function Home() {
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
-    const [dateOfBirth, setDateOfBirth] = useState("")
-    const [startDate, setStartDate] = useState("")
+    const [dateOfBirth, setDateOfBirth] = useState(null)
+    const [startDate, setStartDate] = useState(null)
     const [street, setStreet] = useState("")
     const [city, setCity] = useState("")
     const [state, setState] = useState("")
@@ -39,8 +40,8 @@ export default function Home() {
         if (
             !firstName.trim() ||
             !lastName.trim() ||
-            !dateOfBirth.trim() ||
-            !startDate.trim() ||
+            !dateOfBirth ||
+            !startDate ||
             !street.trim() ||
             !city.trim() ||
             !state.trim() ||
@@ -53,8 +54,8 @@ export default function Home() {
         const newEmployee = {
             firstName,
             lastName,
-            dateOfBirth,
-            startDate,
+            dateOfBirth: dateOfBirth ? dateOfBirth.toISOString().split('T')[0] : "",
+            startDate: startDate ? startDate.toISOString().split('T')[0] : "",
             street,
             city,
             state,
@@ -69,8 +70,8 @@ export default function Home() {
         // Je réinitialise tous les champs après soumission
         setFirstName("")
         setLastName("")
-        setDateOfBirth("")
-        setStartDate("")
+        setDateOfBirth(null)
+        setStartDate(null)
         setStreet("")
         setCity("")
         setState("")
@@ -102,22 +103,24 @@ export default function Home() {
                         placeholder={showErrors && !lastName.trim() ? "Field required" : ""}
                     />
 
-                    <InputField
+                    <CustomDatePicker
                         label="Date of Birth"
                         id="date-of-birth"
                         value={dateOfBirth}
-                        onChange={(e) => setDateOfBirth(e.target.value)}
-                        className={showErrors && !dateOfBirth.trim() ? "error" : ""}
-                        placeholder={showErrors && !dateOfBirth.trim() ? "Field required" : ""}
+                        selected={dateOfBirth}
+                        onChange={setDateOfBirth}
+                        placeholder="Select Your Date of Birth"
+                        className={showErrors && !dateOfBirth ? "error" : ""}
                     />
 
-                    <InputField
+                    <CustomDatePicker
                         label="Start Date"
                         id="start-date"
                         value={startDate}
-                        onChange={(e) => setStartDate(e.target.value)}
-                        className={showErrors && !startDate.trim() ? "error" : ""}
-                        placeholder={showErrors && !startDate.trim() ? "Field required" : ""}
+                        selected={startDate}
+                        onChange={setStartDate}
+                        placeholder="Select Your Starting Date"
+                        className={showErrors && !startDate ? "error" : ""}
                     />
 
                     <fieldset className="address">
