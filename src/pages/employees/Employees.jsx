@@ -1,12 +1,10 @@
 import './employees.css'
 import Table from '../../components/table/Table'
 import { useEmployee } from '../../context/UseEmployee.jsx'
-// import jsonData from '../../data/employees_data.json'
 
 const EmployeeList = () => {
 
     const { employees } = useEmployee()
-    // const data = jsonData.employeesData
 
     const columns = [
         { header: 'First Name', accessorKey: 'firstName' },
@@ -24,10 +22,7 @@ const EmployeeList = () => {
         <div className="form-container">
             <h1>Current Employees</h1>
             <div className="table-employee-wrapper">
-
                 <Table data={employees} columns={columns} />
-                {/* <Table data={data} columns={columns} /> */}
-
             </div>
         </div>
     )

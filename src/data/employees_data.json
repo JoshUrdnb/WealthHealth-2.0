@@ -127,7 +127,7 @@
             "startDate": "2021-08-18",
             "department": "Sales",
             "dateOfBirth": "1994-03-08",
-            "street": "18 Meadowbrook Dr",
+            "street": "18 Meadowbrook",
             "city": "Charlotte",
             "state": "NC",
             "zipCode": "28201"
@@ -175,6 +175,39 @@
             "city": "Sacramento",
             "state": "CA",
             "zipCode": "94203"
+        },
+        {
+            "firstName": "Benjamin",
+            "lastName": "Hughes",
+            "startDate": "2023-01-10",
+            "department": "Engineering",
+            "dateOfBirth": "1989-08-11",
+            "street": "112 Maplewood Dr",
+            "city": "Boise",
+            "state": "ID",
+            "zipCode": "83702"
+        },
+        {
+            "firstName": "Natalie",
+            "lastName": "Gray",
+            "startDate": "2023-03-05",
+            "department": "Sales",
+            "dateOfBirth": "1992-11-20",
+            "street": "445 Spruce St",
+            "city": "Des Moines",
+            "state": "IA",
+            "zipCode": "50309"
+        },
+        {
+            "firstName": "Owen",
+            "lastName": "Henderson",
+            "startDate": "2023-04-17",
+            "department": "Marketing",
+            "dateOfBirth": "1990-01-15",
+            "street": "91 Pinecrest Ave",
+            "city": "Madison",
+            "state": "WI",
+            "zipCode": "53703"
         }
     ]
 }
